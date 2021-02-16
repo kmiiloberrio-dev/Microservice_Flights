@@ -1,0 +1,9 @@
+C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\CommonFlight\obj\Debug\netcoreapp3.1\CommonFlight.csprojAssemblyReference.cache
+C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\CommonFlight\obj\Debug\netcoreapp3.1\CommonFlight.AssemblyInfoInputs.cache
+C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\CommonFlight\obj\Debug\netcoreapp3.1\CommonFlight.AssemblyInfo.cs
+C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\CommonFlight\obj\Debug\netcoreapp3.1\CommonFlight.csproj.CoreCompileInputs.cache
+C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\CommonFlight\bin\Debug\netcoreapp3.1\CommonFlight.deps.json
+C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\CommonFlight\bin\Debug\netcoreapp3.1\CommonFlight.dll
+C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\CommonFlight\bin\Debug\netcoreapp3.1\CommonFlight.pdb
+C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\CommonFlight\obj\Debug\netcoreapp3.1\CommonFlight.dll
+C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\CommonFlight\obj\Debug\netcoreapp3.1\CommonFlight.pdb
