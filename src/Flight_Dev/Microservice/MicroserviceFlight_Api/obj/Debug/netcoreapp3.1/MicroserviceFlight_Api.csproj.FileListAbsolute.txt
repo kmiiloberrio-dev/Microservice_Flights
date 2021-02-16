@@ -83,3 +83,4 @@ C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\Microservice\Micros
 C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\Microservice\MicroserviceFlight_Api\obj\Debug\netcoreapp3.1\MicroserviceFlight_Api.dll
 C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\Microservice\MicroserviceFlight_Api\obj\Debug\netcoreapp3.1\MicroserviceFlight_Api.pdb
 C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\Microservice\MicroserviceFlight_Api\obj\Debug\netcoreapp3.1\MicroserviceFlight_Api.genruntimeconfig.cache
+C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\Microservice\MicroserviceFlight_Api\obj\Debug\netcoreapp3.1\MicroserviceFlight_Api.MvcApplicationPartsAssemblyInfo.cs

@@ -1,0 +1,6 @@
+2021-02-16T07:58:01.2535646-05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-02-16T07:58:01.2692658-05:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-02-16T07:58:01.2715831-05:00  [INF] Content root path: "C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\Microservice\MicroserviceFlight_Api" (b5d60022)
+2021-02-16T08:41:17.4187957-05:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-02-16T08:41:17.4303660-05:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-02-16T08:41:17.4335491-05:00  [INF] Content root path: "C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\Microservice\MicroserviceFlight_Api" (b5d60022)

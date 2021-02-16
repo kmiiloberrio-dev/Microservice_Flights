@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace Flight_UI.Controllers
 {
-    public class HomeController : Controller
+    public class FlightController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<FlightController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public FlightController(ILogger<FlightController> logger)
         {
             _logger = logger;
         }

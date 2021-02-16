@@ -46,7 +46,7 @@ namespace Flight_UI
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Flight}/{action=Index}/{id?}");
             });
         }
     }

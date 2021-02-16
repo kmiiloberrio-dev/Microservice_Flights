@@ -44,8 +44,6 @@ namespace MicroserviceFlight_Api
                options.UseSqlServer(Configuration.GetConnectionString("ConnectionDatabase"));
            });
 
-            //services.Configure<ApiSettings>(Configuration.GetSection(nameof(ApiSettings)));
-
             services.AddSwaggerGen(s =>
             {
                 s.SwaggerDoc("v1", new OpenApiInfo() { Title = "FLIGHT API", Version = "v1" });

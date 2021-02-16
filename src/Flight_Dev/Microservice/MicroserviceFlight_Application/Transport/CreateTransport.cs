@@ -14,7 +14,7 @@ namespace MicroserviceFlight_Application.Transport
 
         }
 
-        public class Fire : IRequestHandler<ExecuteCreateTransport, long>
+        public class Fire : IRequestHandler<ExecuteCreateTransport, int>
         {
             private readonly FlightDBContext _FlightDBContext;
             public Fire(FlightDBContext flightDBContext)

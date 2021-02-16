@@ -1,5 +1,7 @@
 ﻿using FluentValidation;
 using MediatR;
+using MicroserviceFlight_Application.Client;
+using MicroserviceFlight_Application.ClientFlight;
 using MicroserviceFlight_Application.Transport;
 using MicroserviceFlight_Core.DataTransferObject;
 using MicroserviceFlight_InfraEstructure.Models;
@@ -7,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Transactions;
 using persistence = MicroserviceFlight_Core.Persistence;
 
 namespace MicroserviceFlight_Application.Flight
@@ -41,26 +44,45 @@ namespace MicroserviceFlight_Application.Flight
 
             public async Task<bool> Handle(ExecuteCreateFligh request, CancellationToken cancellationToken)
             {
-                int transportId = await _IMediator.Send(new CreateTransport.ExecuteCreateTransport());
 
-                persistence.Flight flight = new persistence.Flight()
-                {
-                    ArrivalStation = request.ArrivalStation,
-                    Currency = request.Currency,
-                    DepartureDate = request.DepartureDate,
-                    DepartureStation = request.DepartureStation,
-                    Price = request.Price,
-                    TransportId = transportId
-                };
-
-                _FlightDBContext.Flights.Add(flight);
-                await _FlightDBContext.SaveChangesAsync();
-
-                foreach(var item in request.ListClient)
+                using (var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
                 {
 
+                    int transportId = await _IMediator.Send(new CreateTransport.ExecuteCreateTransport());
+
+                    persistence.Flight flight = new persistence.Flight()
+                    {
+                        ArrivalStation = request.ArrivalStation,
+                        Currency = request.Currency,
+                        DepartureDate = request.DepartureDate,
+                        DepartureStation = request.DepartureStation,
+                        Price = request.Price,
+                        TransportId = transportId
+                    };
+
+                    _FlightDBContext.Flights.Add(flight);
+                    await _FlightDBContext.SaveChangesAsync();
+
+                    foreach (var item in request.ListClient)
+                    {
+                        int clientId = await _IMediator.Send(new CreateClient.ExecuteCreateClient()
+                        {
+                            Email = item.Email,
+                            FirstName = item.FirstName,
+                            LastName = item.LastName,
+                            Phone = item.Phone
+                        });
+
+                        int clientFlightId = await _IMediator.Send(new CreateClientFlight.ExecuteCreateClientFlight()
+                        {
+                            ClientId = clientId,
+                            FlightId = flight.Id
+                        });
+                    }
+
+                    scope.Complete();
+                    return true;
                 }
-
             }
         }
     }

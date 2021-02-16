@@ -337,8 +337,6 @@ C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\UI\Flight_UI\obj\De
 C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\UI\Flight_UI\obj\Debug\netcoreapp3.1\Flight_UI.TagHelpers.input.cache
 C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\UI\Flight_UI\obj\Debug\netcoreapp3.1\Flight_UI.TagHelpers.output.cache
 C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\UI\Flight_UI\obj\Debug\netcoreapp3.1\Flight_UI.RazorCoreGenerate.cache
-C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\UI\Flight_UI\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\UI\Flight_UI\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\UI\Flight_UI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\UI\Flight_UI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\UI\Flight_UI\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -351,3 +349,5 @@ C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\UI\Flight_UI\obj\De
 C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\UI\Flight_UI\obj\Debug\netcoreapp3.1\Flight_UI.dll
 C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\UI\Flight_UI\obj\Debug\netcoreapp3.1\Flight_UI.pdb
 C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\UI\Flight_UI\obj\Debug\netcoreapp3.1\Flight_UI.genruntimeconfig.cache
+C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\UI\Flight_UI\obj\Debug\netcoreapp3.1\Razor\Views\Flight\Index.cshtml.g.cs
+C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\UI\Flight_UI\obj\Debug\netcoreapp3.1\Razor\Views\Flight\Privacy.cshtml.g.cs
