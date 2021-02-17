@@ -1,3 +1,5 @@
+using GatewayFlight.ApiCollection;
+using GatewayFlight.ApiCollection.Interface;
 using GatewayFlight.Middleware;
 using GatewayFlight.Setting;
 using Microsoft.AspNetCore.Builder;
@@ -31,6 +33,10 @@ namespace GatewayFlight
             {
                 builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
             }));
+
+            services.AddHttpContextAccessor();
+            services.AddHttpClient();
+            services.AddTransient<IFlightApi, FlightApi>();
 
             services.Configure<ApiSettings>(Configuration.GetSection(nameof(ApiSettings)));
 
@@ -74,7 +80,7 @@ namespace GatewayFlight
 
             loggerFactory.AddFile("LogGatewayMsc\\Log-{Date}.txt");
 
-            app.UseCors("corsAppFlight");
+            app.UseCors("corsAppGateway");
 
             app.UseMiddleware<MagamentExceptionMiddleware>();
 

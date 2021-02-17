@@ -1,5 +1,8 @@
-﻿using MediatR;
+﻿using CommonFlight.Pagination;
+using MediatR;
+using MicroserviceFlight_Application.ClientFlight;
 using MicroserviceFlight_Application.Flight;
+using MicroserviceFlight_Core.DataTransferObject;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -23,6 +26,17 @@ namespace MicroserviceFlight_Api.Controllers
         public async Task<bool> CreateFlight(CreateFlight.ExecuteCreateFligh model)
         {
             return await _IMediator.Send(model);
+        }
+
+        [HttpGet("GetAllFlightPaginate")]
+        public async Task<DataCollection<FlightTransportDto>> GetAllFlightPaginate(int Page, int Size, string FlightNumber)
+        {
+            return await _IMediator.Send(new GetAllFlightPaginate.ExecuteGetAllFlightPaginate()
+            {
+                Page = Page,
+                Size = Size,
+                FlightNumber = FlightNumber
+            });
         }
     }
 }

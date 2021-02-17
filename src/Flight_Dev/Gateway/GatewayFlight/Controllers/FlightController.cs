@@ -1,4 +1,5 @@
-﻿using GatewayFlight.ApiCollection.Interface;
+﻿using CommonFlight.Pagination;
+using GatewayFlight.ApiCollection.Interface;
 using GatewayFlight.Model.Flight;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -20,9 +21,16 @@ namespace GatewayFlight.Controllers
         }
 
         [HttpPost("CreateFlight")]
-        public async Task<string> CreateFlight(FlightModel model)
+        public async Task<string> CreateFlight([FromBody]FlightModel model)
         {
             return await _IFlightApi.CreateFlight(model);
         }
+
+        [HttpGet("GetAllFlightPaginate")]
+        public async Task<DataCollection<FlightTransportModel>> GetAllFlightPaginate(string Page, string Size, string FlightNumber)
+        {
+            return await _IFlightApi.GetAllFlightPaginate(Page, Size, FlightNumber);
+        }
+
     }
 }

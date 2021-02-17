@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using MicroserviceFlight_Application.Client;
+using MicroserviceFlight_Core.DataTransferObject;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -19,10 +20,19 @@ namespace MicroserviceFlight_Api.Controllers
             _IMediator = mediator;
         }
 
-        [HttpPost("CreateFlight")]
-        public async Task<bool> CreateFlight(EditClient.ExecuteEditClient model)
+        [HttpPost("EditClient")]
+        public async Task<bool> EditClient(EditClient.ExecuteEditClient model)
         {
             return await _IMediator.Send(model);
+        }
+
+        [HttpGet("GetClientByFlightNumber")]
+        public async Task<List<ClientDto>>GetClientByFlightNumber(string FlightNumber)
+        {
+            return await _IMediator.Send(new GetClientByFlightNumber.ExecuteGetClientByFlightNumber()
+            {
+                FlightNumber = FlightNumber
+            });
         }
     }
 }

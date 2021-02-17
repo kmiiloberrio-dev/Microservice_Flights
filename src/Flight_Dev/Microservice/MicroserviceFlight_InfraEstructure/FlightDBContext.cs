@@ -37,6 +37,8 @@ namespace MicroserviceFlight_InfraEstructure.Models
                 entity.Property(e => e.FirstName).HasMaxLength(50);
 
                 entity.Property(e => e.LastName).HasMaxLength(50);
+
+                entity.Property(e => e.Phone).HasMaxLength(50);
             });
 
             modelBuilder.Entity<ClientFlight>(entity =>

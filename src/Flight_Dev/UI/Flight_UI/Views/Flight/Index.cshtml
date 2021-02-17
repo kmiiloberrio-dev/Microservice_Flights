@@ -4,33 +4,39 @@
 
 <h1 class="mt-5">Buscar vuelos</h1>
 <br />
-<div class="row">
-    <div class="col-3">
-        <input type="text" class="form-control" placeholder="Origen" />
+    <div class="row">
+        <div class="col-3">
+            <input type="text" class="form-control" id="txtOrigin" placeholder="Origen" />
+        </div>
+        <div class="col-3">
+            <input type="text" class="form-control" id="txtDestination" placeholder="Destino" />
+        </div>
+        <div class="col-3">
+            <input type="date" class="form-control" id="txtDate" />
+        </div>
+        <div class="col-3">
+            <button id="btnBuscar" class="btn btn-primary">Buscar vuelo</button>
+        </div>
     </div>
-    <div class="col-3">
-        <input type="text" class="form-control" placeholder="Destino" />
-    </div>
-    <div class="col-3">
-        <input type="date" class="form-control" />
-    </div>
-    <div class="col-3">
-        <button class="btn btn-primary">Buscar vuelo</button>
-    </div>
-</div>
-<br />
-<br />
-<div class="row">
+    <br />
+    <br />
     <div class="col-12">
-        <table class="table">
+        <table class="table" id="tableFlight">
             <thead>
                 <tr>
                     <th>Origen</th>
                     <th>Destino</th>
                     <th>Fecha</th>
+                    <th>Precio</th>
                     <th>Acción</th>
                 </tr>
             </thead>
         </table>
     </div>
-</div>
+
+
+    @section Scripts{
+
+        <script src="~/js/SearchFlight.js" asp-append-version="true"></script>
+
+    }
