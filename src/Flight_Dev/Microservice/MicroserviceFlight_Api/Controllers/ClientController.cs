@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using MicroserviceFlight_Application.Client;
+using MicroserviceFlight_Application.Response;
 using MicroserviceFlight_Core.DataTransferObject;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -21,7 +22,7 @@ namespace MicroserviceFlight_Api.Controllers
         }
 
         [HttpPost("EditClient")]
-        public async Task<bool> EditClient(EditClient.ExecuteEditClient model)
+        public async Task<ResponseMessage> EditClient(EditClient.ExecuteEditClient model)
         {
             return await _IMediator.Send(model);
         }

@@ -37,6 +37,7 @@ namespace GatewayFlight
             services.AddHttpContextAccessor();
             services.AddHttpClient();
             services.AddTransient<IFlightApi, FlightApi>();
+            services.AddTransient<IClientApi, ClientApi>();
 
             services.Configure<ApiSettings>(Configuration.GetSection(nameof(ApiSettings)));
 

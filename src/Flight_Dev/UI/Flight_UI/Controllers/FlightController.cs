@@ -123,6 +123,41 @@ namespace Flight_UI.Controllers
             return Ok(jsonData);
         }
 
+        public async Task<IActionResult> EditSaleFlight(string ArrivalStation, string DepartureStation,
+            string DepartureDate, string Price, string Currency, string FlightNumber)
+        {
+            var result = await _IFligthApi.GetClientByFlightNumber(FlightNumber);
+
+            EditFlight editFlight = new EditFlight()
+            {
+                ArrivalStation = ArrivalStation,
+                Currency = Currency,
+                DepartureDate = DepartureDate,
+                DepartureStation = DepartureStation,
+                Price = Price,
+                ListClient = result
+            };
+            return View(editFlight);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditFlight([FromBody] List<ClientModel> model)
+        {
+            try
+            {
+                foreach (var item in model)
+                {
+                    var result = await _IFligthApi.EditClient(item);
+                }
+
+                return Json(new { success = true, mensaje = "Cambios guardados" });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, mensaje = ex.Message });
+            }
+        }
+
         public IActionResult Privacy()
         {
             return View();

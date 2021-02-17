@@ -1,13 +1,16 @@
 ﻿using GatewayFlight.ApiCollection.InfraEstructura;
 using GatewayFlight.ApiCollection.Interface;
 using GatewayFlight.Model.Client;
+using GatewayFlight.Response;
 using GatewayFlight.Setting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace GatewayFlight.ApiCollection
@@ -24,14 +27,27 @@ namespace GatewayFlight.ApiCollection
             _httpContextAccessor = httpContextAccessor;
         }
 
-        public Task<string> EditClient(ClientModel model)
+        public async Task<ResponseMessage> EditClient(ClientModel model)
         {
-            throw new NotImplementedException();
+            var message = new HttpRequestBuilder(_settings.Value.UrlFlight)
+                        .SetPath(_settings.Value.EditClient)
+                        .HttpMethod(HttpMethod.Post)
+                        .GetHttpMessage();
+
+            var json = JsonConvert.SerializeObject(model);
+            message.Content = new StringContent(json, Encoding.UTF8, "application/json");
+            return await SendRequest<ResponseMessage>(message);
         }
 
-        public Task<List<ClientModel>> GetClientByFlightNumber(string FlightNumber)
+        public async Task<List<ClientModel>> GetClientByFlightNumber(string FlightNumber)
         {
-            throw new NotImplementedException();
+            var message = new HttpRequestBuilder(_settings.Value.UrlFlight)
+                                  .SetPath(_settings.Value.GetClientByFlightNumber)
+                                  .AddQueryString("FlightNumber", FlightNumber)
+                                  .HttpMethod(HttpMethod.Get)
+                                  .GetHttpMessage();
+
+            return await SendRequest<List<ClientModel>>(message);
         }
     }
 }

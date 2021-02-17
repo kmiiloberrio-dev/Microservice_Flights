@@ -367,3 +367,4 @@ C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\UI\Flight_UI\bin\De
 C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\UI\Flight_UI\bin\Debug\netcoreapp3.1\CommonFlight.dll
 C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\UI\Flight_UI\bin\Debug\netcoreapp3.1\CommonFlight.pdb
 C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\UI\Flight_UI\obj\Debug\netcoreapp3.1\Razor\Views\Flight\ListFlightSale.cshtml.g.cs
+C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\UI\Flight_UI\obj\Debug\netcoreapp3.1\Razor\Views\Flight\EditSaleFlight.cshtml.g.cs

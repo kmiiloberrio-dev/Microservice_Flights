@@ -51,7 +51,7 @@ namespace MicroserviceFlight_Application.Client
                 {
                     Email = x.client.Email,
                     FirstName = x.client.FirstName,
-                    Id = x.client.Id,
+                    Id = x.client.Id.ToString(),
                     LastName = x.client.LastName,
                     Phone = x.client.Phone
                 }).ToList();

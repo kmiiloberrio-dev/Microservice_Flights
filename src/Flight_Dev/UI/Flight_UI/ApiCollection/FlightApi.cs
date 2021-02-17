@@ -49,5 +49,28 @@ namespace Flight_UI.ApiCollection
 
             return await SendRequest<DataCollection<FlightTransportModel>>(message);
         }
+
+        public async Task<List<ClientModel>> GetClientByFlightNumber(string FlightNumber)
+        {
+            var message = new HttpRequestBuilder(_settings.Value.UrlGateway)
+                                  .SetPath(_settings.Value.GetClientByFlightNumber)
+                                  .AddQueryString("FlightNumber", FlightNumber)
+                                  .HttpMethod(HttpMethod.Get)
+                                  .GetHttpMessage();
+
+            return await SendRequest<List<ClientModel>>(message);
+        }
+
+        public async Task<ResponseMessage> EditClient(ClientModel model)
+        {
+            var message = new HttpRequestBuilder(_settings.Value.UrlGateway)
+                        .SetPath(_settings.Value.EditClient)
+                        .HttpMethod(HttpMethod.Post)
+                        .GetHttpMessage();
+
+            var json = JsonConvert.SerializeObject(model);
+            message.Content = new StringContent(json, Encoding.UTF8, "application/json");
+            return await SendRequest<ResponseMessage>(message);
+        }
     }
 }

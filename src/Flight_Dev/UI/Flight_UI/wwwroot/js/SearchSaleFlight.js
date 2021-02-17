@@ -71,7 +71,8 @@
                         "mDataProp": "Price",
                         "aTargets": [5],
                         "render": function (data, type, row) {
-                            return '<a href="/Flight/SaleFlight/?ArrivalStation=' + row.ArrivalStation + '&DepartureStation=' + row.DepartureStation + '&DepartureDate=' + row.DepartureDate + '&Price=' + row.Price + '&Currency=' + row.Currency + '">editar vuelo</a>' +
+                            debugger
+                            return '<a href="/Flight/EditSaleFlight/?ArrivalStation=' + row.ArrivalStation + '&DepartureStation=' + row.DepartureStation + '&DepartureDate=' + row.DepartureDate + '&Price=' + row.Price + '&Currency=' + row.Currency + '&FlightNumber=' + row.TransportNumber+'">editar vuelo</a>' +
                                 ' | <a href="/Flight/SaleFlight/?ArrivalStation=' + row.ArrivalStation + '&DepartureStation=' + row.DepartureStation + '&DepartureDate=' + row.DepartureDate + '&Price=' + row.Price + '&Currency=' + row.Currency + '">descargar</a>';
                         }
                     },

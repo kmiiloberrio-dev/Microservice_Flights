@@ -1,5 +1,6 @@
 ﻿using CommonFlight.Pagination;
 using GatewayFlight.ApiCollection.Interface;
+using GatewayFlight.Model.Client;
 using GatewayFlight.Model.Flight;
 using GatewayFlight.Response;
 using Microsoft.AspNetCore.Http;
@@ -16,9 +17,12 @@ namespace GatewayFlight.Controllers
     public class FlightController : ControllerBase
     {
         private readonly IFlightApi _IFlightApi;
-        public FlightController(IFlightApi flightApi)
+        private readonly IClientApi _IClientApi;
+        public FlightController(IFlightApi flightApi,
+            IClientApi clientApi)
         {
             _IFlightApi = flightApi;
+            _IClientApi = clientApi;
         }
 
         [HttpPost("CreateFlight")]
@@ -31,6 +35,18 @@ namespace GatewayFlight.Controllers
         public async Task<DataCollection<FlightTransportModel>> GetAllFlightPaginate(string Page, string Size, string FlightNumber)
         {
             return await _IFlightApi.GetAllFlightPaginate(Page, Size, FlightNumber);
+        }
+
+        [HttpGet("GetClientByFlightNumber")]
+        public async Task<List<ClientModel>> GetClientByFlightNumber(string FlightNumber)
+        {
+            return await _IClientApi.GetClientByFlightNumber(FlightNumber);
+        }
+
+        [HttpPost("EditClient")]
+        public async Task<ResponseMessage> EditClient([FromBody]ClientModel model)
+        {
+            return await _IClientApi.EditClient(model);
         }
 
     }
