@@ -1,0 +1,15 @@
+C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\Microservice\MicroserviceFlight_InfraEstructure\bin\Debug\netcoreapp3.1\MicroserviceFlight_Core.dll
+C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\Microservice\MicroserviceFlight_InfraEstructure\obj\Debug\netcoreapp3.1\MicroserviceFlight_InfraEstructure.csprojAssemblyReference.cache
+C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\Microservice\MicroserviceFlight_InfraEstructure\obj\Debug\netcoreapp3.1\MicroserviceFlight_InfraEstructure.AssemblyInfoInputs.cache
+C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\Microservice\MicroserviceFlight_InfraEstructure\obj\Debug\netcoreapp3.1\MicroserviceFlight_InfraEstructure.AssemblyInfo.cs
+C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\Microservice\MicroserviceFlight_InfraEstructure\bin\Debug\netcoreapp3.1\MicroserviceFlight_InfraEstructure.deps.json
+C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\Microservice\MicroserviceFlight_InfraEstructure\bin\Debug\netcoreapp3.1\MicroserviceFlight_InfraEstructure.runtimeconfig.json
+C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\Microservice\MicroserviceFlight_InfraEstructure\bin\Debug\netcoreapp3.1\MicroserviceFlight_InfraEstructure.runtimeconfig.dev.json
+C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\Microservice\MicroserviceFlight_InfraEstructure\bin\Debug\netcoreapp3.1\MicroserviceFlight_InfraEstructure.dll
+C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\Microservice\MicroserviceFlight_InfraEstructure\bin\Debug\netcoreapp3.1\MicroserviceFlight_InfraEstructure.pdb
+C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\Microservice\MicroserviceFlight_InfraEstructure\bin\Debug\netcoreapp3.1\MicroserviceFlight_Core.pdb
+C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\Microservice\MicroserviceFlight_InfraEstructure\obj\Debug\netcoreapp3.1\MicroserviceFlight_InfraEstructure.csproj.CoreCompileInputs.cache
+C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\Microservice\MicroserviceFlight_InfraEstructure\obj\Debug\netcoreapp3.1\MicroserviceFlight_InfraEstructure.csproj.CopyComplete
+C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\Microservice\MicroserviceFlight_InfraEstructure\obj\Debug\netcoreapp3.1\MicroserviceFlight_InfraEstructure.dll
+C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\Microservice\MicroserviceFlight_InfraEstructure\obj\Debug\netcoreapp3.1\MicroserviceFlight_InfraEstructure.pdb
+C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\Microservice\MicroserviceFlight_InfraEstructure\obj\Debug\netcoreapp3.1\MicroserviceFlight_InfraEstructure.genruntimeconfig.cache

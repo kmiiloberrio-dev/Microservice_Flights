@@ -1,0 +1,9 @@
+C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\Microservice\MicroserviceFlight_Core\bin\Debug\netcoreapp3.1\MicroserviceFlight_Core.deps.json
+C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\Microservice\MicroserviceFlight_Core\bin\Debug\netcoreapp3.1\MicroserviceFlight_Core.dll
+C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\Microservice\MicroserviceFlight_Core\bin\Debug\netcoreapp3.1\MicroserviceFlight_Core.pdb
+C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\Microservice\MicroserviceFlight_Core\obj\Debug\netcoreapp3.1\MicroserviceFlight_Core.csprojAssemblyReference.cache
+C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\Microservice\MicroserviceFlight_Core\obj\Debug\netcoreapp3.1\MicroserviceFlight_Core.AssemblyInfoInputs.cache
+C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\Microservice\MicroserviceFlight_Core\obj\Debug\netcoreapp3.1\MicroserviceFlight_Core.AssemblyInfo.cs
+C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\Microservice\MicroserviceFlight_Core\obj\Debug\netcoreapp3.1\MicroserviceFlight_Core.csproj.CoreCompileInputs.cache
+C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\Microservice\MicroserviceFlight_Core\obj\Debug\netcoreapp3.1\MicroserviceFlight_Core.dll
+C:\Users\georgecalderon\Documents\NewShoreDev\src\Flight_Dev\Microservice\MicroserviceFlight_Core\obj\Debug\netcoreapp3.1\MicroserviceFlight_Core.pdb
