@@ -2,6 +2,7 @@
 using GatewayFlight.ApiCollection.InfraEstructura;
 using GatewayFlight.ApiCollection.Interface;
 using GatewayFlight.Model.Flight;
+using GatewayFlight.Response;
 using GatewayFlight.Setting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
@@ -27,7 +28,7 @@ namespace GatewayFlight.ApiCollection
             _httpContextAccessor = httpContextAccessor;
         }
 
-        public async Task<string> CreateFlight(FlightModel model)
+        public async Task<ResponseMessage> CreateFlight(FlightModel model)
         {
             var message = new HttpRequestBuilder(_settings.Value.UrlFlight)
                         .SetPath(_settings.Value.CreateFlight)
@@ -36,7 +37,7 @@ namespace GatewayFlight.ApiCollection
 
             var json = JsonConvert.SerializeObject(model);
             message.Content = new StringContent(json, Encoding.UTF8, "application/json");
-            return await SendRequest<string>(message);
+            return await SendRequest<ResponseMessage>(message);
         }
 
         public async Task<DataCollection<FlightTransportModel>> GetAllFlightPaginate(string Page, string Size, string FlightNumber)

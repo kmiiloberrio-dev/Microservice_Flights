@@ -2,6 +2,7 @@
 using MediatR;
 using MicroserviceFlight_Application.Client;
 using MicroserviceFlight_Application.ClientFlight;
+using MicroserviceFlight_Application.Response;
 using MicroserviceFlight_Application.Transport;
 using MicroserviceFlight_Core.DataTransferObject;
 using MicroserviceFlight_InfraEstructure.Models;
@@ -16,7 +17,7 @@ namespace MicroserviceFlight_Application.Flight
 {
     public class CreateFlight
     {
-        public class ExecuteCreateFligh : IRequest<bool>
+        public class ExecuteCreateFligh : IRequest<ResponseMessage>
         {
             public string DepartureStation { get; set; }
             public string ArrivalStation { get; set; }
@@ -31,7 +32,7 @@ namespace MicroserviceFlight_Application.Flight
 
         }
 
-        public class Fire : IRequestHandler<ExecuteCreateFligh, bool>
+        public class Fire : IRequestHandler<ExecuteCreateFligh, ResponseMessage>
         {
             private readonly IMediator _IMediator;
             private readonly FlightDBContext _FlightDBContext;
@@ -42,7 +43,7 @@ namespace MicroserviceFlight_Application.Flight
                 _IMediator = mediator;
             }
 
-            public async Task<bool> Handle(ExecuteCreateFligh request, CancellationToken cancellationToken)
+            public async Task<ResponseMessage> Handle(ExecuteCreateFligh request, CancellationToken cancellationToken)
             {
 
                 using (var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
@@ -81,7 +82,11 @@ namespace MicroserviceFlight_Application.Flight
                     }
 
                     scope.Complete();
-                    return true;
+                    return new ResponseMessage()
+                    {
+                        Message = "Compra exitosa",
+                        Success = true
+                    };
                 }
             }
         }

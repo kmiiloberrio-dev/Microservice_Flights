@@ -1,6 +1,7 @@
 ﻿using CommonFlight.Pagination;
 using GatewayFlight.ApiCollection.Interface;
 using GatewayFlight.Model.Flight;
+using GatewayFlight.Response;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -21,7 +22,7 @@ namespace GatewayFlight.Controllers
         }
 
         [HttpPost("CreateFlight")]
-        public async Task<string> CreateFlight([FromBody]FlightModel model)
+        public async Task<ResponseMessage> CreateFlight([FromBody]FlightModel model)
         {
             return await _IFlightApi.CreateFlight(model);
         }

@@ -2,10 +2,14 @@
 using Flight_UI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Flight_UI.Controllers
@@ -26,35 +30,39 @@ namespace Flight_UI.Controllers
             return View();
         }
 
-        public IActionResult SearchFlight(string draw, string start, string length,
+        public async Task<IActionResult> SearchFlight(string draw, string start, string length,
             string txtOrigin, string txtDestination, string txtDate)
         {
-            List<VuelosEjemplo> vuelosEjemplo = new List<VuelosEjemplo>()
-            {
-              new VuelosEjemplo()
-              {  ArrivalStation = "Bogota",
-                 DepartureStation = "Medellin",
-                 DepartureDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
-                 Price = "123.34",
-                 Currency = "COP"
-              },
-              new VuelosEjemplo()
-              {
-                ArrivalStation = "Manizales",
-                DepartureStation = "Bogota",
-                DepartureDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
-                Price = "123.34",
-                Currency = "COP"
-              }
-            };
 
-            if (txtOrigin != null)
+            try
             {
-                vuelosEjemplo = vuelosEjemplo.Where(x => x.ArrivalStation == txtOrigin).ToList();
+                Peticion peticion = new Peticion()
+                {
+                    Origin = txtOrigin,
+                    Destination = txtDestination,
+                    From = Convert.ToDateTime(txtDate).ToString("yyy-MM-dd")
+                };
+
+                var json = JsonConvert.SerializeObject(peticion);
+                var data = new StringContent(json, Encoding.UTF8, "application/json");
+                var client = new HttpClient();
+                var response = await client.PostAsync("http://testapi.vivaair.com/otatest/api/values", data);
+                string result = response.Content.ReadAsStringAsync().Result;
+
+                dynamic resulta = JsonConvert.DeserializeObject(result);
+
+                List<Elementos> elementos = JsonConvert.DeserializeObject<List<Elementos>>(resulta);
+
+
+                var jsonData = new { draw, recordsFiltered = start, recordsTotal = length, data = elementos };
+                return Ok(jsonData);
             }
-
-            var jsonData = new { draw, recordsFiltered = start, recordsTotal = length, data = vuelosEjemplo };
-            return Ok(jsonData);
+            catch
+            {
+                List<Elementos> elementos = new List<Elementos>();
+                var jsonData = new { draw, recordsFiltered = start, recordsTotal = length, data = elementos };
+                return Ok(jsonData);
+            }
         }
 
         public IActionResult SaleFlight(string ArrivalStation, string DepartureStation,
@@ -89,12 +97,12 @@ namespace Flight_UI.Controllers
                 };
 
                 var result = await _IFligthApi.CreateFlight(flightModel);
-                return Json(new { success = true, mensaje = "Compra exitosa" });
+                return Json(new { success = result.Success, mensaje = result.Message });
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex.Message);
-                return Json(new { success = false, mensaje = "ex.Message" });
+                return Json(new { success = false, mensaje = ex.Message });
             }
         }
 
@@ -110,7 +118,7 @@ namespace Flight_UI.Controllers
             int page = Convert.ToInt32(start) / pageSize;
             int skip = page + 1;
 
-            var resul = await  _IFligthApi.GetAllFlightPaginate(skip.ToString(), pageSize.ToString(), txtOrigin);
+            var resul = await _IFligthApi.GetAllFlightPaginate(skip.ToString(), pageSize.ToString(), txtOrigin);
             var jsonData = new { draw, recordsFiltered = resul.Total, recordsTotal = resul.Total, data = resul.Items };
             return Ok(jsonData);
         }

@@ -2,6 +2,7 @@
 using MediatR;
 using MicroserviceFlight_Application.ClientFlight;
 using MicroserviceFlight_Application.Flight;
+using MicroserviceFlight_Application.Response;
 using MicroserviceFlight_Core.DataTransferObject;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -23,7 +24,7 @@ namespace MicroserviceFlight_Api.Controllers
         }
 
         [HttpPost("CreateFlight")]
-        public async Task<bool> CreateFlight(CreateFlight.ExecuteCreateFligh model)
+        public async Task<ResponseMessage> CreateFlight(CreateFlight.ExecuteCreateFligh model)
         {
             return await _IMediator.Send(model);
         }

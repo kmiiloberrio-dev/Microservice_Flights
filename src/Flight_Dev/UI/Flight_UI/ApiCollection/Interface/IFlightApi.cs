@@ -1,5 +1,6 @@
 ﻿using CommonFlight.Pagination;
 using Flight_UI.Models;
+using Flight_UI.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace Flight_UI.ApiCollection.Interface
 {
     public interface IFlightApi
     {
-        Task<string> CreateFlight(FlightApiModel model);
+        Task<ResponseMessage> CreateFlight(FlightApiModel model);
         Task<DataCollection<FlightTransportModel>> GetAllFlightPaginate(string Page, string Size, string FlightNumber);
     }
 }

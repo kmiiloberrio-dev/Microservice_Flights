@@ -2,6 +2,7 @@
 using Flight_UI.ApiCollection.InfraEstructura;
 using Flight_UI.ApiCollection.Interface;
 using Flight_UI.Models;
+using Flight_UI.Response;
 using Flight_UI.Setting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
@@ -24,7 +25,7 @@ namespace Flight_UI.ApiCollection
             _settings = settings;
         }
 
-        public async Task<string> CreateFlight(FlightApiModel model)
+        public async Task<ResponseMessage> CreateFlight(FlightApiModel model)
         {
             var message = new HttpRequestBuilder(_settings.Value.UrlGateway)
                         .SetPath(_settings.Value.CreateFlight)
@@ -33,7 +34,7 @@ namespace Flight_UI.ApiCollection
 
             var json = JsonConvert.SerializeObject(model);
             message.Content = new StringContent(json, Encoding.UTF8, "application/json");
-            return await SendRequest<string>(message);
+            return await SendRequest<ResponseMessage>(message);
         }
 
         public async Task<DataCollection<FlightTransportModel>> GetAllFlightPaginate(string Page, string Size, string FlightNumber)
