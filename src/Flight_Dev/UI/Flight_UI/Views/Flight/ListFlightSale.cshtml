@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1 class="mt-5">Vuelos vendidos</h1>
+<br />
+<div class="row">
+    <div class="col-3">
+        <input type="text" class="form-control" id="txtCode" placeholder="Código de reserva" />
+    </div>
+    <div class="col-3">
+        <button id="btnBuscar" class="btn btn-primary">Buscar vuelo</button>
+    </div>
+</div>
+<br />
+<br />
+<div class="col-12">
+    <table class="table" id="tableSaleFlight">
+        <thead>
+            <tr>
+                <th>Origen</th>
+                <th>Destino</th>
+                <th>Fecha</th>
+                <th>Precio</th>
+                <th>Código de reserva</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+
+@section Scripts{
+    <script src="~/js/SearchSaleFlight.js" asp-append-version="true"></script>
+}

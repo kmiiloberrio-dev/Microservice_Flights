@@ -1,0 +1,101 @@
+﻿@model Flight_UI.Models.EditFlight
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1 class="mt-5">Editar vuelo</h1>
+<br />
+<div id="accordion">
+    <div class="card">
+
+        <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Detalle del vuelo
+                </button>
+            </h5>
+        </div>
+
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-3">
+                        <label>Origen</label>
+                        <input type="text" class="form-control" id="txtOrigin" asp-for="ArrivalStation" disabled placeholder="Origen" />
+                    </div>
+                    <div class="col-3">
+                        <label>Destino</label>
+                        <input type="text" class="form-control" id="txtDestination" asp-for="DepartureStation" disabled placeholder="Destino" />
+                    </div>
+                    <div class="col-3">
+                        <label>Fecha y hora</label>
+                        <input type="text" class="form-control" id="txtDate" asp-for="DepartureDate" disabled />
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-3">
+                        <label>Precio</label>
+                        <input type="text" class="form-control" id="txtPrice" asp-for="Price" placeholder="Origen" disabled />
+                    </div>
+                    <div class="col-3">
+                        <label>Moneda</label>
+                        <input type="text" class="form-control" id="txtCurrency" asp-for="Currency" placeholder="Destino" disabled />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="card">
+        <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Editar pasajeros
+                </button>
+            </h5>
+        </div>
+        <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+                <table class="table" id="tableEdit">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombres</th>
+                            <th>Apellidos</th>
+                            <th>Telefono</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.ListClient)
+                        {
+                            <tr>
+                                <td><input type="text" value="@item.Id" class="form-control" disabled /></td>
+                                <td><input type="text" value="@item.FirstName" class="form-control" disabled /></td>
+                                <td><input type="text" value="@item.LastName" class="form-control" disabled /></td>
+                                <td><input type="text" value="@item.Phone" class="form-control" /></td>
+                                <td><input type="text" value="@item.Email" class="form-control" /></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<div class="float-right">
+    <button class="btn btn-primary btn-lg" id="btnSave">Guardar cambios</button>
+</div>
+<br />
+<br />
+<br />
+
+@section Scripts{
+    <script src="~/js/EditFlight.js" asp-append-version="true"></script>
+}
