@@ -1,12 +1,11 @@
 ﻿using MediatR;
 using MicroserviceFlight_Core.DataTransferObject;
 using MicroserviceFlight_InfraEstructure.Models;
-using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
 
 namespace MicroserviceFlight_Application.Client
 {

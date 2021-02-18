@@ -3,11 +3,9 @@ using Flight_UI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -156,6 +154,13 @@ namespace Flight_UI.Controllers
             {
                 return Json(new { success = false, mensaje = ex.Message });
             }
+        }
+
+        public async Task<IActionResult> DownloadFile(string FlightNumber)
+        {
+            var result = await _IFligthApi.DownloadFile(FlightNumber);
+            byte[] document = Convert.FromBase64String(result.FileBase64);
+            return File(document, "application/octet-stream", $"{FlightNumber}.pdf");
         }
 
         public IActionResult Privacy()

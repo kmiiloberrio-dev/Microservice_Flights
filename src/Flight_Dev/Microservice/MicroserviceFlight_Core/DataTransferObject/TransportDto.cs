@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MicroserviceFlight_Core.DataTransferObject
+﻿namespace MicroserviceFlight_Core.DataTransferObject
 {
     public class TransportDto
     {

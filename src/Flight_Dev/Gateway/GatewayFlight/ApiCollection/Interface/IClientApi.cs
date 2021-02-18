@@ -1,8 +1,6 @@
 ﻿using GatewayFlight.Model.Client;
 using GatewayFlight.Response;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace GatewayFlight.ApiCollection.Interface
