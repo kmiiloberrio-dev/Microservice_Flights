@@ -9,7 +9,7 @@ namespace MicroserviceFlight_Test
     public class FlightTest
     {
         [Fact]
-        public async void GetVuelosPaginados()
+        public async void CreateClient()
         {
             var options = new DbContextOptionsBuilder<FlightDBContext>()
                 .UseInMemoryDatabase(databaseName: "BaseDatosLibro")
