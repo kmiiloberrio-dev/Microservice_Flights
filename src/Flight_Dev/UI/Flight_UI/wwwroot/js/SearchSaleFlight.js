@@ -48,11 +48,11 @@
                 },
                 aoColumnDefs: [
                     {
-                        "mDataProp": "ArrivalStation",
+                        "mDataProp": "DepartureStation",
                         "aTargets": [0]
                     },
                     {
-                        "mDataProp": "DepartureStation",
+                        "mDataProp": "ArrivalStation",
                         "aTargets": [1]
                     },
                     {
