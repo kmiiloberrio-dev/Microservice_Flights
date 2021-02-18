@@ -4,11 +4,7 @@ using MicroserviceFlight_Application.ClientFlight;
 using MicroserviceFlight_Application.Flight;
 using MicroserviceFlight_Application.Response;
 using MicroserviceFlight_Core.DataTransferObject;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace MicroserviceFlight_Api.Controllers
@@ -36,6 +32,15 @@ namespace MicroserviceFlight_Api.Controllers
             {
                 Page = Page,
                 Size = Size,
+                FlightNumber = FlightNumber
+            });
+        }
+
+        [HttpGet("DownloadFile")]
+        public async Task<ResponseMessageFile> DownloadFile(string FlightNumber)
+        {
+            return await _IMediator.Send(new DownloadFile.ExecuteDownloadFile()
+            {
                 FlightNumber = FlightNumber
             });
         }

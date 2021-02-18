@@ -29,7 +29,10 @@ namespace MicroserviceFlight_Application.Flight
 
         public class ValidationCreateFligth : AbstractValidator<ExecuteCreateFligh>
         {
-
+            public ValidationCreateFligth()
+            {
+                RuleFor(x => x.ArrivalStation).NotNull();
+            }
         }
 
         public class Fire : IRequestHandler<ExecuteCreateFligh, ResponseMessage>

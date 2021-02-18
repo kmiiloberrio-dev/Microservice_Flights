@@ -2,12 +2,10 @@
 using GatewayFlight.ApiCollection.Interface;
 using GatewayFlight.Model.Client;
 using GatewayFlight.Model.Flight;
+using GatewayFlight.Model.Response;
 using GatewayFlight.Response;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace GatewayFlight.Controllers
@@ -26,7 +24,7 @@ namespace GatewayFlight.Controllers
         }
 
         [HttpPost("CreateFlight")]
-        public async Task<ResponseMessage> CreateFlight([FromBody]FlightModel model)
+        public async Task<ResponseMessage> CreateFlight([FromBody] FlightModel model)
         {
             return await _IFlightApi.CreateFlight(model);
         }
@@ -44,10 +42,15 @@ namespace GatewayFlight.Controllers
         }
 
         [HttpPost("EditClient")]
-        public async Task<ResponseMessage> EditClient([FromBody]ClientModel model)
+        public async Task<ResponseMessage> EditClient([FromBody] ClientModel model)
         {
             return await _IClientApi.EditClient(model);
         }
 
+        [HttpGet("DownloadFile")]
+        public async Task<ResponseMessageFile> DownloadFile(string FlightNumber)
+        {
+            return await _IFlightApi.DownloadFile(FlightNumber);
+        }
     }
 }

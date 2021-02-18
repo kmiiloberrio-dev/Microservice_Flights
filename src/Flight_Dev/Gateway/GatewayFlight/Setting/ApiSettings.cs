@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace GatewayFlight.Setting
+﻿namespace GatewayFlight.Setting
 {
     public class ApiSettings
     {
@@ -12,5 +7,6 @@ namespace GatewayFlight.Setting
         public string GetAllFlightPaginate { get; set; }
         public string EditClient { get; set; }
         public string GetClientByFlightNumber { get; set; }
+        public string DownloadFile { get; set; }
     }
 }

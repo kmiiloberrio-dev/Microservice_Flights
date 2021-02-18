@@ -2,14 +2,12 @@
 using GatewayFlight.ApiCollection.InfraEstructura;
 using GatewayFlight.ApiCollection.Interface;
 using GatewayFlight.Model.Flight;
+using GatewayFlight.Model.Response;
 using GatewayFlight.Response;
 using GatewayFlight.Setting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,6 +36,17 @@ namespace GatewayFlight.ApiCollection
             var json = JsonConvert.SerializeObject(model);
             message.Content = new StringContent(json, Encoding.UTF8, "application/json");
             return await SendRequest<ResponseMessage>(message);
+        }
+
+        public async Task<ResponseMessageFile> DownloadFile(string FlightNumber)
+        {
+            var message = new HttpRequestBuilder(_settings.Value.UrlFlight)
+                               .SetPath(_settings.Value.DownloadFile)
+                               .AddQueryString("FlightNumber", FlightNumber)
+                               .HttpMethod(HttpMethod.Get)
+                               .GetHttpMessage();
+
+            return await SendRequest<ResponseMessageFile>(message);
         }
 
         public async Task<DataCollection<FlightTransportModel>> GetAllFlightPaginate(string Page, string Size, string FlightNumber)
