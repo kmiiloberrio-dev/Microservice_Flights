@@ -1,7 +1,5 @@
-﻿using System;
-using MicroserviceFlight_Core.Persistence;
+﻿using MicroserviceFlight_Core.Persistence;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
 
 #nullable disable
 

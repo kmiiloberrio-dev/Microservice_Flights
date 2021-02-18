@@ -2,14 +2,12 @@
 using Flight_UI.ApiCollection.InfraEstructura;
 using Flight_UI.ApiCollection.Interface;
 using Flight_UI.Models;
+using Flight_UI.Models.Response;
 using Flight_UI.Response;
 using Flight_UI.Setting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -71,6 +69,17 @@ namespace Flight_UI.ApiCollection
             var json = JsonConvert.SerializeObject(model);
             message.Content = new StringContent(json, Encoding.UTF8, "application/json");
             return await SendRequest<ResponseMessage>(message);
+        }
+
+        public async Task<ResponseMessageFile> DownloadFile(string FlightNumber)
+        {
+            var message = new HttpRequestBuilder(_settings.Value.UrlGateway)
+                               .SetPath(_settings.Value.DownloadFile)
+                               .AddQueryString("FlightNumber", FlightNumber)
+                               .HttpMethod(HttpMethod.Get)
+                               .GetHttpMessage();
+
+            return await SendRequest<ResponseMessageFile>(message);
         }
     }
 }

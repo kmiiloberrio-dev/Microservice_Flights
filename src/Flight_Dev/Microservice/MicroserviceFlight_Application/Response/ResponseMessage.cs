@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MicroserviceFlight_Application.Response
+﻿namespace MicroserviceFlight_Application.Response
 {
     public class ResponseMessage
     {

@@ -73,7 +73,7 @@
                         "render": function (data, type, row) {
                             debugger
                             return '<a href="/Flight/EditSaleFlight/?ArrivalStation=' + row.ArrivalStation + '&DepartureStation=' + row.DepartureStation + '&DepartureDate=' + row.DepartureDate + '&Price=' + row.Price + '&Currency=' + row.Currency + '&FlightNumber=' + row.TransportNumber+'">editar vuelo</a>' +
-                                ' | <a href="/Flight/SaleFlight/?ArrivalStation=' + row.ArrivalStation + '&DepartureStation=' + row.DepartureStation + '&DepartureDate=' + row.DepartureDate + '&Price=' + row.Price + '&Currency=' + row.Currency + '">descargar</a>';
+                                ' | <a href="/Flight/DownloadFile/?FlightNumber=' + row.TransportNumber + '">descargar</a>';
                         }
                     },
                 ],

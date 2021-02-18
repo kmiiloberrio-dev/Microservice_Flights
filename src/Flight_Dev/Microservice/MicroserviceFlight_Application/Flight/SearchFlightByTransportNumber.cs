@@ -1,8 +1,6 @@
 ﻿using MediatR;
 using MicroserviceFlight_Core.DataTransferObject;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
